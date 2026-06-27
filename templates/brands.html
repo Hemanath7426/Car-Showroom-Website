@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Brands | NEXUS MOTORS{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-backdrop"></div>
+    <div class="hero-text">
+        <h1>SELECT YOUR BREED</h1>
+        <p>Curated excellence from the world's finest automotive engineering houses.</p>
+    </div>
+</section>
+
+<section class="grid-container">
+    <h2 class="section-title">The Pantheon</h2>
+    <div class="brand-grid">
+        {% for slug, data in brands.items() %}
+        <a href="/brand/{{ slug }}" class="brand-card">
+            <div class="card-bg" style="background-image: url('{{ data.logo }}');"></div>
+            <div class="card-overlay">
+                <h3>{{ data.name }}</h3>
+                <span class="explore-lbl">Enter Atelier &rarr;</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

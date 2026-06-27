@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NEXUS MOTORS{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">NEXUS<span>MOTORS</span></a>
+        <nav>
+            <a href="/">Showroom</a>
+            <a href="#">Collections</a>
+            <a href="#">Hyper-Configurator</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NEXUS MOTORS INC. Engineered to Perfection.</p>
+    </footer>
+
+</body>
+</html>

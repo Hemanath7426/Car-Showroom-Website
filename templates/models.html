@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ brand.name }} Fleet | NEXUS MOTORS{% endblock %}
+
+{% block content %}
+<section class="internal-hero">
+    <h1>{{ brand.name }} Atelier</h1>
+    <p>Discover current productions, legacy releases, and custom hyper-variants.</p>
+    <a href="/" class="back-link">&larr; Return to Showroom</a>
+</section>
+
+<section class="grid-container">
+    <div class="model-grid">
+        {% for model in brand.models %}
+        <div class="model-card">
+            <div class="model-img" style="background-image: url('{{ model.img }}');"></div>
+            <div class="model-details">
+                <div class="card-row">
+                    <span class="model-year">{{ model.year }}</span>
+                    <span class="model-price">{{ model.price }}</span>
+                </div>
+                <h3>{{ model.name }}</h3>
+                <p class="model-specs">{{ model.specs }}</p>
+                <button class="quote-btn">Inquire Allocation</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
